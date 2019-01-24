@@ -10,13 +10,15 @@ public class God {
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Id
 		
+		//Values within the Entity
 		private Long godID;
 		private String name;
 		
 		public God() {
 			
 		}
-
+		
+		//Getters and Setters
 		public Long getGodID() {
 			return godID;
 		}
