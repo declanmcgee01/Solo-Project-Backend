@@ -6,10 +6,13 @@ import com.qa.persistence.domain.God;
 import com.qa.persistence.repository.GodRepository;
 import com.qa.util.JSONUtil;
 
+//Class to implement the GodService interface
 public class GodServiceImplementation implements GodService {
 	
+	//Create instance of repository
 	@Inject
 	private GodRepository repo;
+	//Using JSON
 	@Inject
 	private JSONUtil util;
 	
