@@ -41,7 +41,7 @@ public class GodRepositoryImplementation implements GodRepository {
 
 	@Transactional(REQUIRED)
 	public String deleteGod(Long godID) {
-		God godInDB = findGod(godID);
+		God godInDB = getGod(godID);
 		if(godInDB != null) {
 			manager.remove(godInDB);
 		}
@@ -49,7 +49,7 @@ public class GodRepositoryImplementation implements GodRepository {
 	}
 
 	public String updateGod(Long godID, String god) {
-		God godToUpdate = findGod(godID);
+		God godToUpdate = getGod(godID);
 		God jsongod = util.getObjectForJSON(god, God.class);
 		
 		if(godToUpdate !=null) {
@@ -61,7 +61,13 @@ public class GodRepositoryImplementation implements GodRepository {
 
 	}
 
-	public God findGod(Long godID) {
+	public String findGod(Long godID) {
+		Query query = manager.createQuery("Select g FROM God g WHERE g=" + godID);
+		God gods = (God) query.getSingleResult();
+		return util.getJSONForObject(gods);
+	}
+	
+	public God getGod(Long godID) {
 		return manager.find(God.class, godID);
 	}
 	

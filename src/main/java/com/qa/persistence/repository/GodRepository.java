@@ -8,6 +8,6 @@ public interface GodRepository {
 	String createGod(String god);
 	String deleteGod(Long godID);
 	String updateGod(Long godID, String god);
-	God findGod(Long classroomID);
+	String findGod(Long godID);
 
 }
