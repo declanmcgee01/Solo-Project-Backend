@@ -46,5 +46,6 @@ public class GodEndpoint {
 	public String updateGod(@PathParam("godID")Long godID, String god) {
 		return service.updateGod(godID, god);
 	}
+	
 
 }

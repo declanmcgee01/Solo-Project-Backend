@@ -27,7 +27,7 @@ public class GodRepositoryImplementation implements GodRepository {
 	@Inject JSONUtil util;
 	
 	public String getAllGods() {
-		Query query = manager.createQuery("Select c FROM god c");
+		Query query = manager.createQuery("Select g FROM God g");
 		Collection<God> gods = (Collection<God>) query.getResultList();
 		return util.getJSONForObject(gods);
 	}
