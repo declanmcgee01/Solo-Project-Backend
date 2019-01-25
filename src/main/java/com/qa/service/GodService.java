@@ -14,5 +14,7 @@ public interface GodService {
 	
 	//updateGod
 	String updateGod(Long godID, String god);
+	
+	
 
 }
