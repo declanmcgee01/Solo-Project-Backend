@@ -13,10 +13,38 @@ public class God {
 		//Values within the Entity
 		private Long godID;
 		private String name;
+		private String godOf;
+		private String children;
+		private String powers;
 		
 		public God() {
 			
 		}
+		
+		public String getGodOf() {
+			return godOf;
+		}
+
+		public void setGodOf(String godOf) {
+			this.godOf = godOf;
+		}
+
+		public String getChildren() {
+			return children;
+		}
+
+		public void setChildren(String children) {
+			this.children = children;
+		}
+
+		public String getPowers() {
+			return powers;
+		}
+
+		public void setPowers(String powers) {
+			this.powers = powers;
+		}
+
 		
 		//Getters and Setters
 		public Long getGodID() {

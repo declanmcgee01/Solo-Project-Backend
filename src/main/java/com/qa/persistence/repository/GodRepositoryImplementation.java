@@ -14,7 +14,6 @@ import javax.transaction.Transactional;
 import com.qa.persistence.domain.God;
 import com.qa.util.JSONUtil;
 
-
 import java.util.Collection;
 
 @Transactional(SUPPORTS)
