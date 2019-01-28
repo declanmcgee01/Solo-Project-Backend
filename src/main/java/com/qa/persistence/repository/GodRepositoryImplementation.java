@@ -46,7 +46,8 @@ public class GodRepositoryImplementation implements GodRepository {
 		}
 		return "{\"Message\": \"god has been deleted\"}";
 	}
-
+	
+	@Transactional(REQUIRED)
 	public String updateGod(Long godID, String god) {
 		God godToUpdate = getGod(godID);
 		God jsongod = util.getObjectForJSON(god, God.class);
