@@ -16,7 +16,16 @@ public class God {
 		private String godOf;
 		private String children;
 		private String powers;
+		private String godImage;
 		
+		public String getGodImage() {
+			return godImage;
+		}
+
+		public void setGodImage(String godImage) {
+			this.godImage = godImage;
+		}
+
 		public God() {
 			
 		}
