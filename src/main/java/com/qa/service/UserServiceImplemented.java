@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import com.qa.persistence.repository.UserRepository;
 import com.qa.util.JSONUtil;
 
-public class UserServiceImplemented {
+public class UserServiceImplemented implements UserService {
 	
 	@Inject
 	private UserRepository repo;
@@ -17,7 +17,7 @@ public class UserServiceImplemented {
 		return repo.getAllUsers();
 	}
 	
-	public String createUsers(String user) {
+	public String createUser(String user) {
 		return repo.createUser(user);
 	}
 	
