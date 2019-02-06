@@ -16,7 +16,7 @@ public interface GodService {
 	String updateGod(Long godID, String god);
 	
 	//Find a specific god by ID
-	String findGod(Long godID);
+	String findGod(String name);
 	
 	
 

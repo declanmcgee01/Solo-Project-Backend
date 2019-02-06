@@ -36,8 +36,8 @@ public class GodServiceImplementation implements GodService {
 		this.repo = repo;
 	}
 
-	public String findGod(Long godID) {
-		return repo.findGod(godID);
+	public String findGod(String name) {
+		return repo.findGod(name);
 	}
 
 }

@@ -61,8 +61,10 @@ public class GodRepositoryImplementation implements GodRepository {
 
 	}
 
-	public String findGod(Long godID) {
-		Query query = manager.createQuery("Select g FROM God g WHERE g=" + godID);
+	public String findGod(String name) {
+		Query query = manager.createQuery("Select g FROM God g WHERE g.name = :name");
+		query.setParameter("name", name);
+		@SuppressWarnings("unchecked")
 		God gods = (God) query.getSingleResult();
 		return util.getJSONForObject(gods);
 	}
