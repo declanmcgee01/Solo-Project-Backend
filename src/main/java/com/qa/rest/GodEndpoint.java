@@ -47,11 +47,11 @@ public class GodEndpoint {
 		return service.updateGod(godID, god);
 	}
 	
-	@Path("/findGod/{godID}")
+	@Path("/findGod/{name}")
 	@GET
 	@Produces({"application/json"})
-	public String findGod(@PathParam("godID")Long godID) {
-		return service.findGod(godID);
+	public String findGod(@PathParam("name")String name) {
+		return service.findGod(name);
 	}
 	
 
