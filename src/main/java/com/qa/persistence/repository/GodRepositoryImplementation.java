@@ -44,7 +44,7 @@ public class GodRepositoryImplementation implements GodRepository {
 		if(godInDB != null) {
 			manager.remove(godInDB);
 		}
-		return "{\"message\": \"god has been deleted\"}";
+		return "{\"message\": \"A god has been deleted\"}";
 	}
 	
 	@Transactional(REQUIRED)
