@@ -5,10 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
 @Entity
 public class God {	
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Id
+		
 		
 		//Values within the Entity
 		private Long godID;
@@ -17,6 +20,11 @@ public class God {
 		private String children;
 		private String powers;
 		private String godImage;
+		private Long userID;
+		
+		public God() {
+			
+		}
 		
 		public String getGodImage() {
 			return godImage;
@@ -26,9 +34,6 @@ public class God {
 			this.godImage = godImage;
 		}
 
-		public God() {
-			
-		}
 		
 		public String getGodOf() {
 			return godOf;
@@ -70,6 +75,14 @@ public class God {
 
 		public void setName(String name) {
 			this.name = name;
+		}
+
+		public Long getUserID() {
+			return userID;
+		}
+
+		public void setUserID(Long userID) {
+			this.userID = userID;
 		}
 	}
 
