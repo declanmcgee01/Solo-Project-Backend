@@ -55,9 +55,9 @@ public class GodRepositoryImplementation implements GodRepository {
 		if(godToUpdate !=null) {
 			manager.remove(godToUpdate);
 			manager.persist(jsongod);
-			return "{\"message\": \"god has been updated\"}";
+			return "{\"message\": \"A god has been updated\"}";
 		}
-		return "{\"message\": \"god did not update\"}";
+		return "{\"message\": \"A god did not update\"}";
 
 	}
 

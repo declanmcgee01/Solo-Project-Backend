@@ -9,6 +9,8 @@ import com.qa.util.JSONUtil;
 //Class to implement the GodService interface
 public class GodServiceImplementation implements GodService {
 	
+	String[] invalidWords = new String[] {"poop", "butt", "jobby", "naughty"};
+	
 	//Create instance of repository
 	@Inject
 	private GodRepository repo;
@@ -40,6 +42,13 @@ public class GodServiceImplementation implements GodService {
 	}
 
 	public String updateGod(Long godID, String god) {
+		God aGod = util.getObjectForJSON(god,  God.class);
+		
+		for(int i = 0; i < invalidWords.length; i++) {
+			if(aGod.getName().equals(invalidWords[i])) {
+				return "{\"message\": \"Please keep names safe for work\"}";
+			}
+		}
 		return repo.updateGod(godID, god);
 	}
 	
