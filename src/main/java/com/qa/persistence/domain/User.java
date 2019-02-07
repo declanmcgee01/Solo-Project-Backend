@@ -12,7 +12,7 @@ public class User {
 	
 	private Long userID;
 	private String username;
-	private String godType;
+	private String godRace;
 	
 	public User() {
 		
@@ -35,11 +35,11 @@ public class User {
 	}
 
 	public String getGodType() {
-		return godType;
+		return godRace;
 	}
 
-	public void setGodType(String password) {
-		this.godType = password;
+	public void setGodType(String godRace) {
+		this.godRace = godRace;
 	}
 
 }

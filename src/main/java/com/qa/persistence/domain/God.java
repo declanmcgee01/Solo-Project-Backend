@@ -1,14 +1,23 @@
 package com.qa.persistence.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class God {	
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Id
+		
 		
 		//Values within the Entity
 		private Long godID;
@@ -16,6 +25,26 @@ public class God {
 		private String godOf;
 		private String children;
 		private String powers;
+		private String godRace;
+		@OneToMany(
+				cascade = CascadeType.ALL,
+				fetch = FetchType.EAGER
+				)
+		@JoinColumn(name = "godRace")
+		private List<User> user = new ArrayList<>();
+		
+		public God() {
+			
+		}
+		
+		public String getGodRace() {
+			return godRace;
+		}
+
+		public void setGodRace(String godRace) {
+			this.godRace = godRace;
+		}
+
 		private String godImage;
 		
 		public String getGodImage() {
@@ -26,9 +55,6 @@ public class God {
 			this.godImage = godImage;
 		}
 
-		public God() {
-			
-		}
 		
 		public String getGodOf() {
 			return godOf;
