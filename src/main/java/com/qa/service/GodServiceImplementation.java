@@ -26,7 +26,7 @@ public class GodServiceImplementation implements GodService {
 		
 		if(aGod.getName().length() < 3 || aGod.getName().length() > 10)
 		{
-			return "{\"message\": \"Name must be between 1 and 10 letters long\"}";
+			return "{\"message\": \"Name must be between 3 and 10 letters long\"}";
 		}else {
 			return repo.createGod(god);
 		}
@@ -52,10 +52,9 @@ public class GodServiceImplementation implements GodService {
 		return repo.updateGod(godID, god);
 	}
 	
-
 	public String findGod(String name) {
-		return repo.findGod(name);
-	}
+			return repo.findGod(name);
+		}
 
 	public void setRepo(GodRepository repo) {
 		this.repo = repo;
