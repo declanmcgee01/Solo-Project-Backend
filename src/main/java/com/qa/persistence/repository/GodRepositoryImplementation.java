@@ -35,7 +35,7 @@ public class GodRepositoryImplementation implements GodRepository {
 	public String createGod(String god) {
 		God agod = util.getObjectForJSON(god, God.class);
 		manager.persist(agod);
-		return "{\"Message\": \"A god has been sucessfully added\"}";
+		return "{\"message\": \"A god has been sucessfully added\"}";
 	}
 
 	@Transactional(REQUIRED)
@@ -44,7 +44,7 @@ public class GodRepositoryImplementation implements GodRepository {
 		if(godInDB != null) {
 			manager.remove(godInDB);
 		}
-		return "{\"Message\": \"god has been deleted\"}";
+		return "{\"message\": \"A god has been deleted\"}";
 	}
 	
 	@Transactional(REQUIRED)
@@ -55,9 +55,9 @@ public class GodRepositoryImplementation implements GodRepository {
 		if(godToUpdate !=null) {
 			manager.remove(godToUpdate);
 			manager.persist(jsongod);
-			return "{\"Message\": \"god has been updated\"}";
+			return "{\"message\": \"A god has been updated\"}";
 		}
-		return "{\"Message\": \"god did not update\"}";
+		return "{\"message\": \"A god did not update\"}";
 
 	}
 
